@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.BLE</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.BLE.CrossBluetoothLE">
+            <summary>
+            Cross platform bluetooth LE implemenation.
+            </summary>
+        </member>
+        <member name="P:Plugin.BLE.CrossBluetoothLE.Current">
+            <summary>
+            Current bluetooth LE implementation.
+            </summary>
+        </member>
+        <member name="P:Plugin.BLE.Android.Adapter.ConnectedDeviceRegistry">
+            <summary>
+            Used to store all connected devices
+            </summary>
+        </member>
+        <member name="F:Plugin.BLE.Android.Device._gatt">
+            <summary>
+            we have to keep a reference to this because Android's api is weird and requires
+            the GattServer in order to do nearly anything, including enumerating services
+            </summary>
+        </member>
+        <member name="F:Plugin.BLE.Android.Device._gattCallback">
+            <summary>
+            we also track this because of gogole's weird API. the gatt callback is where
+            we'll get notified when services are enumerated
+            </summary>
+        </member>
+        <member name="M:Plugin.BLE.Android.Device.Disconnect">
+            <summary>
+            This method is only called by a user triggered disconnect.
+            A user will first trigger _gatt.disconnect -> which in turn will trigger _gatt.Close() via the gattCallback
+            </summary>
+        </member>
+        <member name="M:Plugin.BLE.Android.Device.CloseGatt">
+            <summary>
+            CloseGatt is called by the gattCallback in case of user disconnect or a disconnect by signal loss or a connection error. 
+            Cleares all cached services.
+            </summary>
+        </member>
+        <member name="T:Plugin.BLE.Extensions.ScanModeExtension">
+            <summary>
+            See https://developer.android.com/reference/android/bluetooth/le/ScanSettings.html
+            </summary>
+        </member>
+    </members>
+</doc>

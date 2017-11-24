@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Workshop.Views.PowerView"
+             xmlns:vm="clr-namespace:Workshop.ViewModels" Title="Power" BackgroundColor="White">
+    <ContentPage.BindingContext>
+        <vm:PowerViewModel></vm:PowerViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label  Text="{Binding Status}" TextColor="Blue"/>
+            <Button Text="Display Status" TextColor="Blue" Command="{Binding DisplayStatus}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

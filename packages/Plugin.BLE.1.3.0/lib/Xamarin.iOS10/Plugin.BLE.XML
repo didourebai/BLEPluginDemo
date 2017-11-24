@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.BLE</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.BLE.CrossBluetoothLE">
+            <summary>
+            Cross platform bluetooth LE implemenation.
+            </summary>
+        </member>
+        <member name="P:Plugin.BLE.CrossBluetoothLE.Current">
+            <summary>
+            Current bluetooth LE implementation.
+            </summary>
+        </member>
+        <member name="F:Plugin.BLE.iOS.Adapter._deviceOperationRegistry">
+            <summary>
+            Registry used to store device instances for pending operations : disconnect
+            Helps to detect connection lost events.
+            </summary>
+        </member>
+        <member name="M:Plugin.BLE.iOS.Adapter.ConnectToKnownDeviceAsync(System.Guid,Plugin.BLE.Abstractions.ConnectParameters,System.Threading.CancellationToken)">
+            <summary>
+            Connects to known device async.
+            
+            https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/BestPracticesForInteractingWithARemotePeripheralDevice/BestPracticesForInteractingWithARemotePeripheralDevice.html
+            
+            </summary>
+            <returns>The to known device async.</returns>
+            <param name="deviceGuid">Device GUID.</param>
+        </member>
+        <member name="M:Plugin.BLE.iOS.Extensions.GuidFromUuid(CoreBluetooth.CBUUID)">
+            <summary>
+            Create a full Guid from the Bluetooth uuid (short version)
+            </summary>
+            <returns>a Guid of the form {00002A37-0000-1000-8000-00805f9b34fb}</returns>
+            <param name="uuid">Bluetooth uuid</param>
+        </member>
+    </members>
+</doc>

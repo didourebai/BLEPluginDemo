@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Workshop"
+             x:Class="Workshop.MainPage" xmlns:vm="clr-namespace:Workshop.ViewModels" Title="Main">
+    <ContentPage.BindingContext>
+        <vm:MainViewModel></vm:MainViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding LabelText}" BackgroundColor="Blue" TextColor="White"/>
+            <Button Text="Click Me !"  BackgroundColor="Blue" TextColor="Yellow" Command="{Binding ChangeTextCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

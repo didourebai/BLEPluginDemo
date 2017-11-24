@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Workshop.Views.DeviceView" Title="Device" BackgroundColor="White"
+             xmlns:vm="clr-namespace:Workshop.ViewModels">
+
+    <ContentPage.BindingContext>
+        <vm:DeviceViewModel></vm:DeviceViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+               
+                    <Button x:Name="btnStatus" Text="Status" Clicked="btnStatus_Clicked"/>
+                    <Button x:Name="btnScan" Text="Scan" Clicked="btnScan_Clicked"/>
+                    <Label x:Name="txtErrorBle" Text=""></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnConnect" Text="Connect" Clicked="btnConnect_Clicked"/>
+                <Button x:Name="btnKnowConnect" Text="Connect know device" Clicked="btnKnowConnect_Clicked"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnGetServices" Text="Get list of services" Clicked="btnGetServices_Clicked"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnGetcharacters" Text="Get characteristics" Clicked="btnGetcharacters_Clicked"/>
+                <Button x:Name="btnGetRW" Text="Read/Write" Clicked="btnGetRW_Clicked"/>
+                <Button x:Name="btnUpdate" Text="Update" Clicked="btnUpdate_Clicked"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnDescriptors" Text="Get Descriptors" Clicked="btnDescriptors_Clicked"/>
+                <Button x:Name="btnDescRW" Text="Read Write descriptor" Clicked="btnDescRW_Clicked"/>
+            </StackLayout>
+            <ListView x:Name="lv" ItemSelected="lv_ItemSelected" BackgroundColor="Yellow" SeparatorColor="Aqua"> 
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding NativeDevice.Id}"/>
+                                <Label Text="{Binding NativeDevice.Name}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

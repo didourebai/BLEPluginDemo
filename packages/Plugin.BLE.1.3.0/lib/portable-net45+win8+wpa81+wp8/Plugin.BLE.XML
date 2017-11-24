@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.BLE</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.BLE.CrossBluetoothLE">
+            <summary>
+            Cross platform bluetooth LE implemenation.
+            </summary>
+        </member>
+        <member name="P:Plugin.BLE.CrossBluetoothLE.Current">
+            <summary>
+            Current bluetooth LE implementation.
+            </summary>
+        </member>
+    </members>
+</doc>
